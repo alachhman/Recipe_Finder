@@ -10,16 +10,16 @@ class RecipeFinder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new DynamicTheme(
-        defaultBrightness: Brightness.light,
-        data: (brightness) =>
-        new ThemeData(
+        defaultBrightness: Brightness.dark,
+        data: (brightness) => new ThemeData(
           primarySwatch: Colors.blue,
           brightness: brightness,
         ),
         themedWidgetBuilder: (context, theme) {
           return MaterialApp(
             title: 'Recipe Finder',
-            home: RecipeInput(title: 'Ingredient Input'),
+            home: new RecipeInput(title: 'Ingredient Input',),
+            theme: theme,
             debugShowCheckedModeBanner: false,
           );
         }
